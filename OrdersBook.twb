@@ -1,0 +1,1214 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='8.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 8300.15.0219.2230                                -->
+  <preferences>
+  </preferences>
+  <datasources>
+    <datasource caption='ORDERS+ (DV_ORDERS)' inline='true' name='oracle.42088.387520277778' version='8.3'>
+      <connection authentication='RDBMS' class='oracle' port='1521' schema='DV_ORDERS' server='129.152.144.84' service='PDB1.usuniversi01134.oraclecloud.internal' username='DV_ORDERS'>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[ORDER_DETAILS].[ITEM_ID]'>
+              </expression>
+              <expression op='[ITEMS].[ITEM_ID]'>
+              </expression>
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[ORDERS].[ORDER_ID]'>
+                </expression>
+                <expression op='[ORDER_DETAILS].[ORDER_ID]'>
+                </expression>
+              </expression>
+            </clause>
+            <relation join='inner' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[ORDERS].[CUSTOMER_ID]'>
+                  </expression>
+                  <expression op='[CUSTOMERS].[CUSTOMER_ID]'>
+                  </expression>
+                </expression>
+              </clause>
+              <relation name='ORDERS' table='[DV_ORDERS].[ORDERS]' type='table' />
+              <relation name='CUSTOMERS' table='[DV_ORDERS].[CUSTOMERS]' type='table' />
+            </relation>
+            <relation name='ORDER_DETAILS' table='[DV_ORDERS].[ORDER_DETAILS]' type='table' />
+          </relation>
+          <relation name='ITEMS' table='[DV_ORDERS].[ITEMS]' type='table' />
+        </relation>
+        <cols>
+          <map key='[ARTIST]' value='[ITEMS].[ARTIST]' />
+          <map key='[CUSTOMER_ADDRESS]' value='[CUSTOMERS].[CUSTOMER_ADDRESS]' />
+          <map key='[CUSTOMER_CITY]' value='[CUSTOMERS].[CUSTOMER_CITY]' />
+          <map key='[CUSTOMER_FAX]' value='[CUSTOMERS].[CUSTOMER_FAX]' />
+          <map key='[CUSTOMER_FIRST_NAME]' value='[CUSTOMERS].[CUSTOMER_FIRST_NAME]' />
+          <map key='[CUSTOMER_ID (CUSTOMERS)]' value='[CUSTOMERS].[CUSTOMER_ID]' />
+          <map key='[CUSTOMER_ID]' value='[ORDERS].[CUSTOMER_ID]' />
+          <map key='[CUSTOMER_LAST_NAME]' value='[CUSTOMERS].[CUSTOMER_LAST_NAME]' />
+          <map key='[CUSTOMER_PHONE]' value='[CUSTOMERS].[CUSTOMER_PHONE]' />
+          <map key='[CUSTOMER_STATE]' value='[CUSTOMERS].[CUSTOMER_STATE]' />
+          <map key='[CUSTOMER_ZIP]' value='[CUSTOMERS].[CUSTOMER_ZIP]' />
+          <map key='[ITEM_ID (ITEMS)]' value='[ITEMS].[ITEM_ID]' />
+          <map key='[ITEM_ID]' value='[ORDER_DETAILS].[ITEM_ID]' />
+          <map key='[ORDER_DATE]' value='[ORDERS].[ORDER_DATE]' />
+          <map key='[ORDER_ID (ORDER_DETAILS)]' value='[ORDER_DETAILS].[ORDER_ID]' />
+          <map key='[ORDER_ID]' value='[ORDERS].[ORDER_ID]' />
+          <map key='[ORDER_QTY]' value='[ORDER_DETAILS].[ORDER_QTY]' />
+          <map key='[SHIPPED_DATE]' value='[ORDERS].[SHIPPED_DATE]' />
+          <map key='[TITLE]' value='[ITEMS].[TITLE]' />
+          <map key='[UNIT_PRICE]' value='[ITEMS].[UNIT_PRICE]' />
+        </cols>
+        <refresh increment-key='' incremental-updates='false'>
+        </refresh>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>ORDER_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ORDER_ID]</local-name>
+            <parent-name>[ORDERS]</parent-name>
+            <remote-alias>ORDER_ID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CUSTOMER_ID]</local-name>
+            <parent-name>[ORDERS]</parent-name>
+            <remote-alias>CUSTOMER_ID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORDER_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[ORDER_DATE]</local-name>
+            <parent-name>[ORDERS]</parent-name>
+            <remote-alias>ORDER_DATE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_DAT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SHIPPED_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[SHIPPED_DATE]</local-name>
+            <parent-name>[ORDERS]</parent-name>
+            <remote-alias>SHIPPED_DATE</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_DAT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CUSTOMER_ID (CUSTOMERS)]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_ID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_FIRST_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_FIRST_NAME]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_FIRST_NAME</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_LAST_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_LAST_NAME]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_LAST_NAME</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_ADDRESS</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_ADDRESS]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_ADDRESS</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>255</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_CITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_CITY]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_CITY</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_STATE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_STATE]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_STATE</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>2</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_AFC{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_ZIP</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_ZIP]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_ZIP</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_PHONE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_PHONE]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_PHONE</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_FAX</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CUSTOMER_FAX]</local-name>
+            <parent-name>[CUSTOMERS]</parent-name>
+            <remote-alias>CUSTOMER_FAX</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORDER_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ORDER_ID (ORDER_DETAILS)]</local-name>
+            <parent-name>[ORDER_DETAILS]</parent-name>
+            <remote-alias>ORDER_ID</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ITEM_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ITEM_ID]</local-name>
+            <parent-name>[ORDER_DETAILS]</parent-name>
+            <remote-alias>ITEM_ID</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORDER_QTY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ORDER_QTY]</local-name>
+            <parent-name>[ORDER_DETAILS]</parent-name>
+            <remote-alias>ORDER_QTY</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ITEM_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ITEM_ID (ITEMS)]</local-name>
+            <parent-name>[ITEMS]</parent-name>
+            <remote-alias>ITEM_ID</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TITLE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TITLE]</local-name>
+            <parent-name>[ITEMS]</parent-name>
+            <remote-alias>TITLE</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARTIST</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ARTIST]</local-name>
+            <parent-name>[ITEMS]</parent-name>
+            <remote-alias>ARTIST</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>50</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UNIT_PRICE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[UNIT_PRICE]</local-name>
+            <parent-name>[ITEMS]</parent-name>
+            <remote-alias>UNIT_PRICE</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Artist' datatype='string' name='[ARTIST]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Customer Address' datatype='string' name='[CUSTOMER_ADDRESS]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Customer City' datatype='string' name='[CUSTOMER_CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal'>
+      </column>
+      <column caption='Customer Fax' datatype='string' name='[CUSTOMER_FAX]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Customer First Name' datatype='string' name='[CUSTOMER_FIRST_NAME]' role='dimension' type='nominal'>
+      </column>
+      <column aggregation='Sum' caption='Customer Id (Customers)' datatype='real' name='[CUSTOMER_ID (CUSTOMERS)]' role='dimension' type='quantitative'>
+      </column>
+      <column aggregation='Sum' caption='Customer Id' datatype='real' name='[CUSTOMER_ID]' role='dimension' type='quantitative'>
+      </column>
+      <column caption='Customer Last Name' datatype='string' name='[CUSTOMER_LAST_NAME]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Customer Phone' datatype='string' name='[CUSTOMER_PHONE]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Customer State' datatype='string' name='[CUSTOMER_STATE]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Customer Zip' datatype='string' name='[CUSTOMER_ZIP]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal'>
+      </column>
+      <column aggregation='Sum' caption='Item Id (Items)' datatype='real' name='[ITEM_ID (ITEMS)]' role='dimension' type='quantitative'>
+      </column>
+      <column aggregation='Sum' caption='Item Id' datatype='real' name='[ITEM_ID]' role='dimension' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Order Date' datatype='datetime' name='[ORDER_DATE]' role='dimension' type='ordinal'>
+      </column>
+      <column aggregation='Sum' caption='Order Id (Order Details)' datatype='real' name='[ORDER_ID (ORDER_DETAILS)]' role='dimension' type='quantitative'>
+      </column>
+      <column caption='Order Id' datatype='real' name='[ORDER_ID]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Order Qty' datatype='real' name='[ORDER_QTY]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Shipped Date' datatype='datetime' name='[SHIPPED_DATE]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Title' datatype='string' name='[TITLE]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Unit Price' datatype='real' name='[UNIT_PRICE]' role='measure' type='quantitative'>
+      </column>
+      <extract count='-1' enabled='true' units='records'>
+        <connection class='dataengine' dbname='C:\Users\Natasha\Documents\DataVisualization\ORDERS+ (DV_ORDERS).tde' schema='Extract' tablename='Extract' update-time='03/25/2015 02:19:56 PM'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[ARTIST]' value='[Extract].[ARTIST]' />
+            <map key='[CUSTOMER_ADDRESS]' value='[Extract].[CUSTOMER_ADDRESS]' />
+            <map key='[CUSTOMER_CITY]' value='[Extract].[CUSTOMER_CITY]' />
+            <map key='[CUSTOMER_FAX]' value='[Extract].[CUSTOMER_FAX]' />
+            <map key='[CUSTOMER_FIRST_NAME]' value='[Extract].[CUSTOMER_FIRST_NAME]' />
+            <map key='[CUSTOMER_ID (CUSTOMERS)]' value='[Extract].[CUSTOMER_ID]' />
+            <map key='[CUSTOMER_ID]' value='[Extract].[CUSTOMER_ID1]' />
+            <map key='[CUSTOMER_LAST_NAME]' value='[Extract].[CUSTOMER_LAST_NAME]' />
+            <map key='[CUSTOMER_PHONE]' value='[Extract].[CUSTOMER_PHONE]' />
+            <map key='[CUSTOMER_STATE]' value='[Extract].[CUSTOMER_STATE]' />
+            <map key='[CUSTOMER_ZIP]' value='[Extract].[CUSTOMER_ZIP]' />
+            <map key='[ITEM_ID (ITEMS)]' value='[Extract].[ITEM_ID]' />
+            <map key='[ITEM_ID]' value='[Extract].[ITEM_ID1]' />
+            <map key='[Number of Records]' value='[Extract].[Number of Records]' />
+            <map key='[ORDER_DATE]' value='[Extract].[ORDER_DATE]' />
+            <map key='[ORDER_ID (ORDER_DETAILS)]' value='[Extract].[ORDER_ID]' />
+            <map key='[ORDER_ID]' value='[Extract].[ORDER_ID1]' />
+            <map key='[ORDER_QTY]' value='[Extract].[ORDER_QTY]' />
+            <map key='[SHIPPED_DATE]' value='[Extract].[SHIPPED_DATE]' />
+            <map key='[TITLE]' value='[Extract].[TITLE]' />
+            <map key='[UNIT_PRICE]' value='[Extract].[UNIT_PRICE]' />
+          </cols>
+          <calculations>
+            <calculation column='[Number of Records]' formula='1' />
+          </calculations>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='68' timestamp-start='2015-03-25 14:19:56.965' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>ARTIST</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ARTIST]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ARTIST</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ITEMS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <scale>1</scale>
+              <width>50</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Burt Ruggles&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Umami&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>200</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_ADDRESS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_ADDRESS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_ADDRESS</remote-alias>
+              <ordinal>1</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <scale>1</scale>
+              <width>255</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;1033 N Sycamore Ave.&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Five Lakepointe Plaza, Ste 500&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>1020</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_CITY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_CITY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_CITY</remote-alias>
+              <ordinal>2</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>19</approx-count>
+              <scale>1</scale>
+              <width>50</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Charlotte&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Washington&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>200</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_FAX</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_FAX]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_FAX</remote-alias>
+              <ordinal>3</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <scale>1</scale>
+              <width>30</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;2095551302&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;NULL&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>120</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>3</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_FIRST_NAME</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_FIRST_NAME]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_FIRST_NAME</remote-alias>
+              <ordinal>4</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <scale>1</scale>
+              <width>50</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Anders&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Yash&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>200</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_ID</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[CUSTOMER_ID (CUSTOMERS)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_ID</remote-alias>
+              <ordinal>5</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>1.0</statistic>
+                <statistic aggregation='Max' datatype='real'>25.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_ID1</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[CUSTOMER_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_ID1</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ORDERS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>1.0</statistic>
+                <statistic aggregation='Max' datatype='real'>25.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_LAST_NAME</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_LAST_NAME]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_LAST_NAME</remote-alias>
+              <ordinal>7</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <scale>1</scale>
+              <width>50</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Anum&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Story&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>200</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_PHONE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_PHONE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_PHONE</remote-alias>
+              <ordinal>8</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <scale>1</scale>
+              <width>30</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;2015559742&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;9475553900&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>120</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_STATE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_STATE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_STATE</remote-alias>
+              <ordinal>9</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <scale>1</scale>
+              <width>2</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;AZ&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;WI&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>4</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_ZIP</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CUSTOMER_ZIP]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CUSTOMER_ZIP</remote-alias>
+              <ordinal>10</ordinal>
+              <family>CUSTOMERS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>24</approx-count>
+              <scale>1</scale>
+              <width>20</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;07004&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;95887&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>80</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ITEM_ID</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[ITEM_ID (ITEMS)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ITEM_ID</remote-alias>
+              <ordinal>11</ordinal>
+              <family>ITEMS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>1.0</statistic>
+                <statistic aggregation='Max' datatype='real'>10.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>5</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ITEM_ID1</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[ITEM_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ITEM_ID1</remote-alias>
+              <ordinal>12</ordinal>
+              <family>ORDER_DETAILS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>1.0</statistic>
+                <statistic aggregation='Max' datatype='real'>10.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>6</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Number of Records</remote-name>
+              <remote-type>16</remote-type>
+              <local-name>[Number of Records]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Number of Records</remote-alias>
+              <ordinal>13</ordinal>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='integer'>1</statistic>
+                <statistic aggregation='Max' datatype='integer'>1</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint8&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ORDER_DATE</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[ORDER_DATE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ORDER_DATE</remote-alias>
+              <ordinal>14</ordinal>
+              <family>ORDERS</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='datetime'>#2012-10-23 00:00:00#</statistic>
+                <statistic aggregation='Max' datatype='datetime'>#2014-08-02 00:00:00#</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;datetime&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ORDER_ID</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[ORDER_ID (ORDER_DETAILS)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ORDER_ID</remote-alias>
+              <ordinal>15</ordinal>
+              <family>ORDER_DETAILS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>19.0</statistic>
+                <statistic aggregation='Max' datatype='real'>829.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ORDER_ID1</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[ORDER_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ORDER_ID1</remote-alias>
+              <ordinal>16</ordinal>
+              <family>ORDERS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>19.0</statistic>
+                <statistic aggregation='Max' datatype='real'>829.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ORDER_QTY</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[ORDER_QTY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ORDER_QTY</remote-alias>
+              <ordinal>17</ordinal>
+              <family>ORDER_DETAILS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>1.0</statistic>
+                <statistic aggregation='Max' datatype='real'>3.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SHIPPED_DATE</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[SHIPPED_DATE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SHIPPED_DATE</remote-alias>
+              <ordinal>18</ordinal>
+              <family>ORDERS</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='datetime'>#2012-10-28 00:00:00#</statistic>
+                <statistic aggregation='Max' datatype='datetime'>#2014-07-31 00:00:00#</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>0</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;datetime&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TITLE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TITLE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TITLE</remote-alias>
+              <ordinal>19</ordinal>
+              <family>ITEMS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <scale>1</scale>
+              <width>50</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Burt Ruggles: An Intimate Portrait&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Zone Out With Umami&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>200</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>UNIT_PRICE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[UNIT_PRICE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>UNIT_PRICE</remote-alias>
+              <ordinal>20</ordinal>
+              <family>ITEMS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>13.0</statistic>
+                <statistic aggregation='Max' datatype='real'>17.949999999999999</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ORDERS+ (DV_ORDERS)' name='oracle.42088.387520277778' />
+          </datasources>
+          <datasource-dependencies datasource='oracle.42088.387520277778'>
+            <column aggregation='Sum' caption='Customer Id (Customers)' datatype='real' name='[CUSTOMER_ID (CUSTOMERS)]' role='dimension' type='quantitative'>
+            </column>
+            <column caption='Customer State' datatype='string' name='[CUSTOMER_STATE]' role='dimension' type='nominal'>
+            </column>
+            <column-instance column='[CUSTOMER_ID (CUSTOMERS)]' derivation='None' name='[none:CUSTOMER_ID (CUSTOMERS):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CUSTOMER_STATE]' derivation='None' name='[none:CUSTOMER_STATE:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[oracle.42088.387520277778].[none:CUSTOMER_STATE:nk]'>
+            <groupfilter from='&quot;AZ&quot;' function='range' level='[none:CUSTOMER_STATE:nk]' to='&quot;WI&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[oracle.42088.387520277778].[none:CUSTOMER_STATE:nk]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#d8504c' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[oracle.42088.387520277778].[none:CUSTOMER_ID (CUSTOMERS):qk]</rows>
+        <cols>[oracle.42088.387520277778].[none:CUSTOMER_STATE:nk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[oracle.42088.387520277778].[none:CUSTOMER_ID (CUSTOMERS):qk]</field>
+          <field>[oracle.42088.387520277778].[none:CUSTOMER_STATE:nk]</field>
+          <field>[oracle.42088.387520277778].[none:CUSTOMER_ZIP:nk]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      /wv1f0zKR1eeewAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
