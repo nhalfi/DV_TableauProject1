@@ -1505,7 +1505,7 @@
     </worksheet>
   </worksheets>
   <dashboards>
-    <dashboard name='Three Interesting Plots'>
+    <dashboard name='Required Plots'>
       <style>
       </style>
       <size maxheight='2100' maxwidth='1100' minheight='2100' minwidth='1100' />
@@ -1553,6 +1553,8 @@
           <field>[oracle.42088.387520277778].[none:CUSTOMER_ZIP:nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Items'>
       <cards>
@@ -1580,6 +1582,8 @@
           <field>[oracle.42088.387520277778].[none:TITLE:nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Orders'>
       <cards>
@@ -1605,6 +1609,8 @@
           <field>[oracle.42088.387520277778].[yr:ORDER_DATE:ok]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='OrderDetails'>
       <cards>
@@ -1690,6 +1696,8 @@
           <field>[oracle.42088.387520277778].[yr:SHIPPED_DATE:ok]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Title by Order and Shipped Date'>
       <cards>
@@ -1718,6 +1726,8 @@
           <field>[oracle.42088.387520277778].[yr:SHIPPED_DATE:ok]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Artist by Order and Shipped Date'>
       <cards>
@@ -1746,8 +1756,10 @@
           <field>[oracle.42088.387520277778].[yr:SHIPPED_DATE:ok]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
-    <window auto-hidden='0' class='dashboard' maximized='1' name='Three Interesting Plots'>
+    <window auto-hidden='0' class='dashboard' maximized='1' name='Required Plots'>
       <zones>
         <zone name='Artist by Order and Shipped Date'>
           <viewpoint>
@@ -2925,7 +2937,7 @@
       mKZ595MLpLMZKQBJ5TB46QSDURu1Yhp/ykpL2wYpAEnlILQCY0ODZJUqOlobyGkm/j+wnRtr
       5pq/iAAAAABJRU5ErkJggg==
     </thumbnail>
-    <thumbnail height='192' name='Three Interesting Plots' width='192'>
+    <thumbnail height='192' name='Required Plots' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAAsTAAALEwEAmpwY
       AAAgAElEQVR4nO2daXwcx3mnn+7puQdzY3CfBAiAICmSIimapCVZlqxY8h1nfSTKOk6cOD+t
       s7F3nThONj/lcHY3Wl/rrGU7jh07tuQ4tnzIkmUdlkSKlEiIFCmeIO4bg2MGc9/d+wEkJBAg
